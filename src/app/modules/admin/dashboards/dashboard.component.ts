@@ -1,4 +1,4 @@
-import { CurrencyPipe, NgClass, NgFor, NgIf } from '@angular/common';
+import { CommonModule, CurrencyPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -14,7 +14,6 @@ import { User } from 'app/core/user/user.types';
 import { DashboardService } from 'app/modules/admin/dashboards/dashboard.service';
 import { ApexOptions, NgApexchartsModule } from 'ng-apexcharts';
 import { Subject, takeUntil } from 'rxjs';
-import { CustomerService } from '../customers/customer.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -22,7 +21,8 @@ import { CustomerService } from '../customers/customer.service';
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [TranslocoModule, MatIconModule, MatButtonModule, MatRippleModule, MatMenuModule, MatTabsModule, MatButtonToggleModule, NgApexchartsModule, NgFor, NgIf, MatTableModule, NgClass, CurrencyPipe],
+    imports: [TranslocoModule, MatIconModule, MatButtonModule, MatRippleModule, MatMenuModule, MatTabsModule,
+        MatButtonToggleModule, NgApexchartsModule, NgFor, NgIf, MatTableModule, NgClass, CurrencyPipe, CommonModule],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
     user: User;
@@ -34,6 +34,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     chartMonthlyExpenses: ApexOptions | any = {};
     chartYearlyExpenses: ApexOptions | any = {};
     data: any;
+    orderQuantities: any;
+    revenues: any;
     selectedProject: string = 'ACME Corp. Backend App';
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
@@ -57,14 +59,18 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
 
         // Get the data
-        this._dashboardService.data$
+        this._dashboardService.orderQuantities$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((data) => {
+            .subscribe((orderQuantities) => {
                 // Store the data
-                this.data = data;
+                this.orderQuantities = orderQuantities;
+            });
 
-                // Prepare the chart data
-                this._prepareChartData();
+        this._dashboardService.revenues$
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe((revenues) => {
+                // Store the data
+                this.revenues = revenues;
             });
 
         // Get the user

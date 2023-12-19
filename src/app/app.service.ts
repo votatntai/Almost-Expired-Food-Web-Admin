@@ -38,8 +38,6 @@ export class AppService {
             .pipe(mergeMapTo(this._messaging.tokenChanges))
             .subscribe(
                 (token) => {
-                    console.log(token);
-
                     var accessToken = localStorage.getItem('accessToken');
                     if (accessToken) {
                         this._authService.registerDeviceToken(token);

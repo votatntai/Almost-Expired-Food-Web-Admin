@@ -23,6 +23,55 @@ export const defaultNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:user',
         link: '/store-owners'
     },
+    {
+        id: 'categories',
+        title: 'Categories',
+        type: 'basic',
+        icon: 'heroicons_outline:chart-bar-square',
+        link: '/categories'
+    },
+    {
+        id: 'campaigns',
+        title: 'Campaigns',
+        type: 'basic',
+        icon: 'heroicons_outline:building-storefront',
+        link: '/campaigns'
+    },
+    {
+        id: 'stores',
+        title: 'Stores',
+        type: 'basic',
+        icon: 'heroicons_outline:building-office',
+        link: '/stores'
+    },
+    {
+        id: 'products',
+        title: 'Products',
+        type: 'basic',
+        icon: 'heroicons_outline:cake',
+        link: '/products'
+    },
+    {
+        id: 'orders',
+        title: 'Orders',
+        type: 'basic',
+        icon: 'heroicons_outline:document-magnifying-glass',
+        link: '/orders'
+    },
+    {
+        id: 'revenues',
+        title: 'Revenues',
+        type: 'basic',
+        icon: 'heroicons_outline:currency-dollar',
+        link: '/revenues'
+    },
+    {
+        id: 'withdraw-requests',
+        title: 'Withdraw Requests',
+        type: 'basic',
+        icon: 'heroicons_outline:credit-card',
+        link: '/withdraw-requests'
+    },
 ];
 export const compactNavigation: FuseNavigationItem[] = [
     {
@@ -45,6 +94,55 @@ export const compactNavigation: FuseNavigationItem[] = [
         type: 'basic',
         icon: 'heroicons_outline:user',
         link: '/store-owners'
+    },
+    {
+        id: 'categories',
+        title: 'Categories',
+        type: 'basic',
+        icon: 'heroicons_outline:chart-bar-square',
+        link: '/categories'
+    },
+    {
+        id: 'campaigns',
+        title: 'Campaigns',
+        type: 'basic',
+        icon: 'heroicons_outline:building-storefront',
+        link: '/campaigns'
+    },
+    {
+        id: 'stores',
+        title: 'Stores',
+        type: 'basic',
+        icon: 'heroicons_outline:building-office',
+        link: '/stores'
+    },
+    {
+        id: 'products',
+        title: 'Products',
+        type: 'basic',
+        icon: 'heroicons_outline:cake',
+        link: '/products'
+    },
+    {
+        id: 'orders',
+        title: 'Orders',
+        type: 'basic',
+        icon: 'heroicons_outline:document-magnifying-glass',
+        link: '/orders'
+    },
+    {
+        id: 'revenues',
+        title: 'Revenues',
+        type: 'basic',
+        icon: 'heroicons_outline:currency-dollar',
+        link: '/revenues'
+    },
+    {
+        id: 'withdraw-requests',
+        title: 'Withdraw Requests',
+        type: 'basic',
+        icon: 'heroicons_outline:credit-card',
+        link: '/withdraw-requests'
     },
 ];
 export const futuristicNavigation: FuseNavigationItem[] = [
@@ -69,6 +167,55 @@ export const futuristicNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:user',
         link: '/store-owners'
     },
+    {
+        id: 'categories',
+        title: 'Categories',
+        type: 'basic',
+        icon: 'heroicons_outline:chart-bar-square',
+        link: '/categories'
+    },
+    {
+        id: 'campaigns',
+        title: 'Campaigns',
+        type: 'basic',
+        icon: 'heroicons_outline:building-storefront',
+        link: '/campaigns'
+    },
+    {
+        id: 'stores',
+        title: 'Stores',
+        type: 'basic',
+        icon: 'heroicons_outline:building-office',
+        link: '/stores'
+    },
+    {
+        id: 'products',
+        title: 'Products',
+        type: 'basic',
+        icon: 'heroicons_outline:cake',
+        link: '/products'
+    },
+    {
+        id: 'orders',
+        title: 'Orders',
+        type: 'basic',
+        icon: 'heroicons_outline:document-magnifying-glass',
+        link: '/orders'
+    },
+    {
+        id: 'revenues',
+        title: 'Revenues',
+        type: 'basic',
+        icon: 'heroicons_outline:currency-dollar',
+        link: '/revenues'
+    },
+    {
+        id: 'withdraw-requests',
+        title: 'Withdraw Requests',
+        type: 'basic',
+        icon: 'heroicons_outline:credit-card',
+        link: '/withdraw-requests'
+    },
 ];
 export const horizontalNavigation: FuseNavigationItem[] = [
     {
@@ -91,5 +238,54 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         type: 'basic',
         icon: 'heroicons_outline:user',
         link: '/store-owners'
+    },
+    {
+        id: 'categories',
+        title: 'Categories',
+        type: 'basic',
+        icon: 'heroicons_outline:chart-bar-square',
+        link: '/categories'
+    },
+    {
+        id: 'campaigns',
+        title: 'Campaigns',
+        type: 'basic',
+        icon: 'heroicons_outline:building-storefront',
+        link: '/campaigns'
+    },
+    {
+        id: 'stores',
+        title: 'Stores',
+        type: 'basic',
+        icon: 'heroicons_outline:building-office',
+        link: '/stores'
+    },
+    {
+        id: 'products',
+        title: 'Products',
+        type: 'basic',
+        icon: 'heroicons_outline:cake',
+        link: '/products'
+    },
+    {
+        id: 'orders',
+        title: 'Orders',
+        type: 'basic',
+        icon: 'heroicons_outline:document-magnifying-glass',
+        link: '/orders'
+    },
+    {
+        id: 'revenues',
+        title: 'Revenues',
+        type: 'basic',
+        icon: 'heroicons_outline:currency-dollar',
+        link: '/revenues'
+    },
+    {
+        id: 'withdraw-requests',
+        title: 'Withdraw Requests',
+        type: 'basic',
+        icon: 'heroicons_outline:credit-card',
+        link: '/withdraw-requests'
     },
 ];

@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    // baseUrl: 'https://localhost:7333',
+    // baseUrl: 'https://localhost:44343',
     baseUrl: 'https://expiredfood.azurewebsites.net',
     // baseUrl: 'https://plantdetectionservice.azurewebsites.net',
     firebase: {

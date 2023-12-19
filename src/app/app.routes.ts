@@ -33,7 +33,7 @@ export const appRoutes: Route[] = [
             { path: 'forgot-password', loadChildren: () => import('app/modules/auth/forgot-password/forgot-password.routes') },
             { path: 'reset-password', loadChildren: () => import('app/modules/auth/reset-password/reset-password.routes') },
             { path: 'sign-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.routes') },
-            { path: 'sign-up', loadChildren: () => import('app/modules/auth/sign-up/sign-up.routes') }
+            { path: 'sign-up', loadChildren: () => import('app/modules/auth/sign-up/sign-up.routes') },
         ]
     },
 
@@ -61,6 +61,7 @@ export const appRoutes: Route[] = [
         },
         children: [
             { path: 'home', loadChildren: () => import('app/modules/landing/home/home.routes') },
+            { path: 'payments', loadChildren: () => import('app/modules/admin/payments/payment.routes') },
         ]
     },
 
@@ -78,6 +79,13 @@ export const appRoutes: Route[] = [
             { path: 'dashboards', loadChildren: () => import('app/modules/admin/dashboards/dashboard.routes') },
             { path: 'customers', loadChildren: () => import('app/modules/admin/customers/customer.routes') },
             { path: 'store-owners', loadChildren: () => import('app/modules/admin/store-owners/store-owner.routes') },
+            { path: 'stores', loadChildren: () => import('app/modules/admin/stores/store.routes') },
+            { path: 'campaigns', loadChildren: () => import('app/modules/admin/campaigns/campaign.routes') },
+            { path: 'orders', loadChildren: () => import('app/modules/admin/orders/order.routes') },
+            { path: 'products', loadChildren: () => import('app/modules/admin/products/product.routes') },
+            { path: 'categories', loadChildren: () => import('app/modules/admin/categories/category.routes') },
+            { path: 'revenues', loadChildren: () => import('app/modules/admin/revenues/revenue.routes') },
+            { path: 'withdraw-requests', loadChildren: () => import('app/modules/admin/withdraw-requests/withdraw-request.routes') },
         ]
     },
 ];

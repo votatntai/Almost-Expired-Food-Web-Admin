@@ -1,0 +1,130 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex flex-col w-full max-w-screen-xl mx-auto px-6 sm:px-8">
+        <div class="flex flex-col sm:flex-row flex-auto sm:items-center min-w-0 my-8 sm:my-12">
+
+            <div
+                class="sm:absolute sm:inset-0 flex flex-col flex-auto min-w-0 sm:overflow-hidden bg-card dark:bg-transparent">
+
+                <div
+                    class="relative flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between py-8 px-6 md:px-8 border-b">
+                    <!-- Loader -->
+                    <div class="absolute inset-x-0 bottom-0" *ngIf="isLoading">
+                        <mat-progress-bar [mode]="'indeterminate'"></mat-progress-bar>
+                    </div>
+                    <!-- Title -->
+                    <div class="text-4xl font-extrabold tracking-tight">Revenue management</div>
+                    <!-- Actions -->
+                    <div class="flex shrink-0 items-center mt-6 sm:mt-0 sm:ml-4 gap-3">
+                        <!-- <mat-form-field class="fuse-mat-dense fuse-mat-rounded min-w-64">
+                            <mat-select [value]="'All'" (selectionChange)="classSelectionChange($event)">
+                                <mat-option value="All">All Class</mat-option>
+                                <mat-option *ngFor="let class of classes" [value]="class.id">{{ class.name
+                                    }}</mat-option>
+                            </mat-select>
+                        </mat-form-field> -->
+
+                        <!-- <button mat-raised-button [color]="'primary'">
+                            <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+                        </button> -->
+                        <!-- Search -->
+                        <div class="flex gap-3">
+                            <div class="flex items-center">
+                                <span class="text-2xl font-semibold">Total: <span class="text-green-500">{{ total |
+                                        number:'1.0-2' }}</span>
+                                    VNĐ</span>
+                            </div>
+                            <mat-form-field class="fuse-mat-dense fuse-mat-rounded min-w-64"
+                                [subscriptSizing]="'dynamic'">
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
+                                <input matInput [formControl]="searchInputControl" [autocomplete]="'off'"
+                                    [placeholder]="'Transaction No'">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col flex-auto sm:mb-18 overflow-hidden sm:overflow-y-auto">
+                    <ng-container *ngIf="(revenues$ | async) as revenues">
+                        <div class="grid">
+                            <!-- Header -->
+                            <div class="revenue-gird z-10 sticky top-0 grid gap-4 py-4 px-6 md:px-8 shadow text-md font-semibold text-secondary bg-gray-50 dark:bg-black dark:bg-opacity-5"
+                                matSort matSortDisableClear>
+                                <div class="hidden sm:block">
+                                    ID
+                                </div>
+                                <div class="hidden sm:block">
+                                    Amout
+                                </div>
+                                <div class="hidden sm:block">
+                                    Transaction No
+                                </div>
+                                <div class="hidden sm:block">
+                                    Order ID
+                                </div>
+                                <div class="hidden sm:block">
+                                    Create At
+                                </div>
+                            </div>
+                            <!-- Rows -->
+                            <ng-container *ngIf="revenues.length > 0; else noRevenues">
+                                <ng-container *ngIf="(revenues$ | async) as revenues">
+                                    <ng-container *ngFor="let revenue of revenues">
+                                        <div class="revenue-gird grid items-center gap-4 py-3 px-6 md:px-8 border-b">
+
+                                            <!-- Gender -->
+                                            <div class="hidden sm:block">
+                                                {{revenue.id}}
+                                            </div>
+
+                                            <!-- Phone -->
+                                            <div class="hidden sm:block">
+                                                <span
+                                                    class="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-blue-500 text-white">
+                                                    {{revenue.amount | number:'1.0-2'}} VNĐ
+                                                </span>
+                                            </div>
+
+                                            <!-- Phone -->
+                                            <div class="hidden sm:block">
+                                                {{revenue.transactionNo }}
+                                            </div>
+
+                                            <!-- Phone -->
+                                            <div class="hidden sm:block">
+                                                {{revenue.orderId }}
+                                            </div>
+
+                                            <!-- Action -->
+                                            <div class="hidden sm:block">
+                                                {{revenue.createAt | date:'dd-MM-YYYY'}} at {{ revenue.createAt |
+                                                date:'hh:mm' }}
+                                            </div>
+
+                                        </div>
+                                    </ng-container>
+                                </ng-container>
+                            </ng-container>
+
+                        </div>
+
+                        <mat-paginator
+                            class="sm:absolute sm:inset-x-0 sm:bottom-0 border-b sm:border-t sm:border-b-0 z-10 bg-gray-50 dark:bg-transparent"
+                            [ngClass]="{'pointer-events-none': isLoading}" [length]="pagination.totalRow"
+                            [pageIndex]="pagination.pageNumber" [pageSize]="pagination.pageSize"
+                            [pageSizeOptions]="[5, 10, 25, 100]" [showFirstLastButtons]="true"></mat-paginator>
+
+                    </ng-container>
+
+                    <ng-template #noRevenues>
+                        <div class="p-8 sm:p-16 border-t text-4xl font-semibold tracking-tight text-center">Record not
+                            found!
+                        </div>
+                    </ng-template>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
